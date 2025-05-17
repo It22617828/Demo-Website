@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Contract</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Supplier Compliance Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="Untitled-1.html">Home</a></li>
+                <li><a href="contract.html">Contracts</a></li>
+                <li><a href="sign.html">Sign Contract</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Review & Sign Agreement</h2>
+        <section class="contract">
+            <h3>Contract Conditions</h3>
+            <ul>
+                <li>🛡️ Supplier must comply with ISO 27001 information security controls.</li>
+                <li>🔐 Confidentiality agreements (NDA) must be strictly enforced.</li>
+                <li>📁 Personal and sensitive data must follow GDPR or local data protection laws.</li>
+                <li>🧾 Audit logs must be maintained for all interactions.</li>
+                <li>📆 The contract remains valid for 1 year from the date of signing.</li>
+            </ul>
+
+            <label for="signature">Type your name as digital signature:</label><br>
+            <input type="text" id="signature" name="signature" placeholder="John Doe"><br><br>
+            <button onclick="signContract()">Agree & Sign</button>
+            <p id="confirmation" style="margin-top: 10px; color: green;"></p>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-flex">
+            <div>
+                <span>© 2024 Supplier Compliance Portal</span>
+                <div class="footer-links">
+                    <a href="team.html">Team</a> |
+                    <a href="terms.html">Terms &amp; Conditions</a> |
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/1abc9c/facebook-new.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/1abc9c/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/1abc9c/linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <div>
+                <span>Contact: contact@supplier.com | +94 11 342 7890</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function signContract() {
+            const name = document.getElementById("signature").value;
+            if (name.trim() === "") {
+                alert("Please type your name to sign the contract.");
+                return;
+            }
+            const timestamp = new Date().toLocaleString();
+            document.getElementById("confirmation").innerText = `Contract signed by ${name} on ${timestamp}`;
+        }
+    </script>
+</body>
+</html>
